@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS movie_db;
-CREATE DATABASE movie_db;
+DROP DATABASE IF EXISTS movies_db;
+CREATE DATABASE movies_db;
 
-USE movie_db;
+USE movies_db;
 
 CREATE TABLE movies (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
