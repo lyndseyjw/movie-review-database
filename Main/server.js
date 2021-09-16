@@ -1,6 +1,7 @@
 const express = require('express');
 // Import and require mysql2
 const mysql = require('mysql2');
+const { readFromFile, readAndAppend, writeToFile } = require('./helpers/fsUtils')
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -44,6 +45,10 @@ app.get('/api/movies', (req, res) => {
 });
 
 // TODO: Delete a movie
+app.delete('/api/movies/:id', (req, res) => {
+  const movieId = req.params.id
+
+})
 
 
 // TODO: Read list of all reviews and associated movie name using LEFT JOIN
