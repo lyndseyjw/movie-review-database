@@ -47,6 +47,19 @@ app.get('/api/movies', (req, res) => {
 // TODO: Delete a movie
 app.delete('/api/movies/:id', (req, res) => {
   const movieId = req.params.id
+  const sql = `DELETE FROM movies WHERE id = ${movieId}`;
+
+  db.query(sql, (err, deletedData) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+       return;
+    }
+    res.json({
+      message: 'deleted',
+      data: deletedData
+    });
+  });
+
 
 })
 
