@@ -6,7 +6,7 @@ VALUES  ("Star Wars Episode IV: A New Hope"),
         ("Legally Blonde"),
         ("Legally Blonde 2: Red, White & Blonde"),
         ("1917"),
-        ("White Chicks")
+        ("White Chicks");
 
 
 INSERT INTO reviews (movie_id, review)

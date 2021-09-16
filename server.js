@@ -16,7 +16,7 @@ const db = mysql.createConnection(
     // MySQL username,
     user: 'root',
     // TODO: Add MySQL password here
-    password: '',
+    password: 'Naej777my',
     database: 'movies_db'
   },
   console.log(`Connected to the movies_db database.`)
@@ -44,6 +44,23 @@ app.get('/api/movies', (req, res) => {
 });
 
 // TODO: Delete a movie
+app.delete('/api/movies/:id', (req, res) => {
+  const movieId = req.params.id
+  const sql = `DELETE FROM movies WHERE id = ${movieId}`;
+
+  db.query(sql, (err, deletedData) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+       return;
+    }
+    res.json({
+      message: 'deleted',
+    });
+  });
+
+
+})
+
 
 // TODO: Read list of all reviews and associated movie name using LEFT JOIN
 
