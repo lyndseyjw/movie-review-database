@@ -56,7 +56,6 @@ app.delete('/api/movies/:id', (req, res) => {
     }
     res.json({
       message: 'deleted',
-      data: deletedData
     });
   });
 
